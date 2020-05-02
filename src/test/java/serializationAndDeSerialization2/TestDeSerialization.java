@@ -1,0 +1,15 @@
+package serializationAndDeSerialization2;
+
+import io.restassured.RestAssured;
+import org.junit.Test;
+
+public class TestDeSerialization {
+
+    @Test
+    public void testDeSerialization() {
+
+        Student student = RestAssured.get("http://localhost:9091/students/1").as(Student.class);
+
+        System.out.println(student.toString());
+    }
+}
